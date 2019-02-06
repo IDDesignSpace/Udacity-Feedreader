@@ -96,8 +96,19 @@ $(function() {
 
             // This is the fourth test I should write
 
-            it ("menu is visible when clicked", function() {
-                   let menu = document.body.className;
+            it ("menu changes visibility when clicked", function() {
+                   let menu = document.body;
+
+                 $(".menu-icon-link").trigger("click");  
+                
+                  
+
+                expect(menu.className).not.toBe("menu-hidden");
+                
+                $(".menu-icon-link").trigger("click"); 
+
+                expect(menu.className).toBe("menu-hidden");
+
 
 
             });
@@ -108,7 +119,7 @@ $(function() {
     });
        
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+    // /* TODO: Write a new test suite named "Initial Entries" */
 
      describe('Initial Entries', function (){
 
@@ -118,20 +129,20 @@ $(function() {
             * Remember, loadFeed() is asynchronous so this test will require
             * the use of Jasmine's beforeEach and asynchronous done() function.
             */
-         it('', function() {
+         it('When LoadFeed is called and completed there is at least one .entry in .feed', function() {
 
          });
 
      });
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+    // /* TODO: Write a new test suite named "New Feed Selection" */
     
-    describe('New Feed Selection',function(){
+    // describe('New Feed Selection',function(){
 
-    });
+    // });
 
-    /* TODO: Write a test that ensures when a new feed is loaded
-    * by the loadFeed function that the content actually changes.
-    * Remember, loadFeed() is asynchronous.
-    */
+    // /* TODO: Write a test that ensures when a new feed is loaded
+    // * by the loadFeed function that the content actually changes.
+    // * Remember, loadFeed() is asynchronous.
+    // */
 }());
