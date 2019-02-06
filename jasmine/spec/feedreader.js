@@ -97,7 +97,7 @@ $(function() {
             // This is the fourth test I should write
 
             it ("menu is visible when clicked", function() {
-                   let 
+                   let menu = document.body.className;
 
 
             });
@@ -118,14 +118,20 @@ $(function() {
             * Remember, loadFeed() is asynchronous so this test will require
             * the use of Jasmine's beforeEach and asynchronous done() function.
             */
+         it('', function() {
 
+         });
 
-
-        /* TODO: Write a new test suite named "New Feed Selection" */
-
-            /* TODO: Write a test that ensures when a new feed is loaded
-            * by the loadFeed function that the content actually changes.
-            * Remember, loadFeed() is asynchronous.
-            */
      });
+
+    /* TODO: Write a new test suite named "New Feed Selection" */
+    
+    describe('New Feed Selection',function(){
+
+    });
+
+    /* TODO: Write a test that ensures when a new feed is loaded
+    * by the loadFeed function that the content actually changes.
+    * Remember, loadFeed() is asynchronous.
+    */
 }());
