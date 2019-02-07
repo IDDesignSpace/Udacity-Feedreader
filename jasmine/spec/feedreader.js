@@ -131,34 +131,41 @@ $(function() {
             */
 
             beforeEach(function(done) {
-                loadFeed(
-                    done()
-                );
+                loadFeed(0,done);
+              
             });
 
          it('When LoadFeed is called and completed there is at least one .entry in .feed', function() {
-            function hasChildren() {
-                if ($(".feed").children().length < 1) {
-                    return false;
-                }
-            };
-            expect(hasChildren()).toBe(true);
-            done();
+           
+
+             expect($(".feed").children().length).toBeGreaterThan(0);
          });
 
      });
 
     // /* TODO: Write a new test suite named "New Feed Selection" */
     
-    describe('New Feed Selection',function(){
+    describe('New Feed Selection',function() {
+            // /* TODO: Write a test that ensures when a new feed is loaded
+        // * by the loadFeed function that the content actually changes.
+        // * Remember, loadFeed() is asynchronous.
+        // */
+
+        var olderFeed;
+
+        beforeEach(function(done) {
+             loadFeed(0,function() {
+                olderFeed = $(".feed").html();
+
+                loadFeed(1,done);
+             } );
+        });
+
         it( "New content is loaded into feed on click", function() {
-             
+            expect($(".feed").html()).not.toBe("olderFeed");
         });
 
     });
 
-    // /* TODO: Write a test that ensures when a new feed is loaded
-    // * by the loadFeed function that the content actually changes.
-    // * Remember, loadFeed() is asynchronous.
-    // */
+  
 }());
