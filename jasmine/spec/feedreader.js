@@ -41,15 +41,8 @@ $(function() {
         })
 
 
-
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
-        // This is the second test I should write
-
         it('name is not empty', function() {
+            //This forEach method checks the feed to make sure is loading names and the names are not empty
             allFeeds.forEach(feed => {
                 expect(feed.name).toBeDefined();
                 expect(feed.name).not.toBe('');
@@ -62,18 +55,19 @@ $(function() {
 
     
     describe("The menu",function() {
-
+   
             it ("menu is hidden", function() {
+                // This makes sure the hamburger menu is hidden
                 expect($('body').hasClass("menu-hidden")).toBe(true);
             });
 
             it ("menu changes visibility when clicked", function() {
-                $('.menu-icon-link').trigger('click');  
+                // This makes sure the hamburger menu's class changes on click
 
+                $('.menu-icon-link').trigger('click');  
                 expect($('body').hasClass('menu-hidden')).not.toBe(true);
                 
                 $('.menu-icon-link').trigger('click'); 
-
                 expect($('body').hasClass('menu-hidden')).toBe(true);
 
 
@@ -90,14 +84,14 @@ $(function() {
 
      describe('Initial Entries', function (){
 
-
+            // This ensure that the loadFeed function is loaded before the test is run
             beforeEach(function(done) {
                 loadFeed(0,done);
               
             });
 
          it('When LoadFeed is called and completed there is at least one .entry in .feed', function() {
-
+            //  This makes sure there is at least one entry in the feed
              expect($(".feed .entry").children().length).toBeGreaterThan(0);
          });
 
@@ -113,8 +107,9 @@ $(function() {
                 loadFeed(1,done);
              } );
         });
-
+        
         it( "New content is loaded into feed on click", function() {
+            // This tests that new information is loaded into the feed upon click
             expect($(".feed").html()).not.toBe(olderFeed);
         });
 
