@@ -74,7 +74,7 @@ $(function() {
                 
                 $('.menu-icon-link').trigger('click'); 
 
-                expect($('body').hasClass('menu-hidden')).toBe("menu-hidden");
+                expect($('body').hasClass('menu-hidden')).toBe(true);
 
 
 
@@ -115,7 +115,7 @@ $(function() {
         });
 
         it( "New content is loaded into feed on click", function() {
-            expect($(".feed").html()).not.toBe("olderFeed");
+            expect($(".feed").html()).not.toBe(olderFeed);
         });
 
     });
